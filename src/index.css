@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.circle {
+	@apply w-3 h-3 rounded-full  border border-white;
+}
+
+.circle.current-circle {
+	@apply bg-white;
+}

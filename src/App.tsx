@@ -6,7 +6,9 @@
 
 // import ImageSliderTwo from './mini-projects/4 - ImageSlider/ImageSliderTwo';
 
-import LoadMore from './mini-projects/5 - LoadMore/LoadMore';
+// import LoadMore from './mini-projects/5 - LoadMore/LoadMore';
+
+import SideMenu from './mini-projects/6 - RecursiveNavMenu/SideMenu';
 function App() {
 	return (
 		<>
@@ -20,7 +22,9 @@ function App() {
 				limit={10}
 			/> */}
 
-			<LoadMore limit={10} skip={10} />
+			{/* <LoadMore limit={10} /> */}
+
+			<SideMenu />
 		</>
 	);
 }

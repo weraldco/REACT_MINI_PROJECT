@@ -1,4 +1,5 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
+import { spreadElement } from '@babel/types';
 import { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { menus } from './data';
@@ -7,7 +8,7 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 
 export default function SideMenu() {
-	const [displayChildrenMenu, setDisplayChildrenMenu] = useState({});
+	// const [displayChildrenMenu, setDisplayChildrenMenu] = useState({});
 	function handleOnClick() {}
 	return (
 		<>
@@ -61,10 +62,16 @@ function MenuItem({ menu, handleClick }: MenuItemsProps) {
 	return (
 		<>
 			<li key={menu.label} onClick={handleClick}>
-				<Link to="/">{menu.label}</Link>
+				<div className="flex">
+					<Link to="/">{menu.label}</Link>
+
+					{menu && menu.children && menu.children.length > 0 ? (
+						<span>+</span>
+					) : null}
+				</div>
 
 				{menu.children && menu.children.length > 0 ? (
-					<MenuList menus={menu.children} />
+					<MenuList menus={menu.children} handleClick={handleClick} />
 				) : null}
 			</li>
 		</>

@@ -1,32 +1,28 @@
 import { useEffect, useState } from 'react';
-// {"id":11,"title":"Annibale Colombo Bed","price":1899.99}
+
 type TProducts = {
 	id: number;
 	title: string;
 	price: number;
-};
-
-type Result = {
-	limit: number;
-	product: TProducts[];
-	skip: number;
-	total: number;
+	images: string;
 };
 
 type UseFetchProps = {
 	limit: number;
-	skip: number;
 };
-export default function LoadMore({ limit, skip }: UseFetchProps) {
+export default function LoadMore({ limit }: UseFetchProps) {
 	const [products, setProducts] = useState<TProducts[]>([]);
 	const [loading, setLoading] = useState(false);
-	console.log(products);
+	const [count, setCount] = useState(1);
+
 	useEffect(() => {
-		if (limit && skip) {
+		if (limit && count) {
 			setLoading(true);
 
 			fetch(
-				`https://dummyjson.com/products?limit=${limit}&skip=${skip}&select=title,price`
+				`https://dummyjson.com/products?limit=${limit}&skip=${
+					count === 1 ? 1 : count * 20
+				}&select=title,price,images`
 			)
 				.then((response) => response.json())
 				.then((data) => {
@@ -38,34 +34,52 @@ export default function LoadMore({ limit, skip }: UseFetchProps) {
 					setLoading(false);
 				});
 		}
-	}, [limit, skip]);
+	}, [limit, count]);
 
 	return (
 		<>
 			{loading ? (
 				<p>Loading..</p>
 			) : (
-				<div>
-					{products.map((product) => (
-						<p>{product.title}</p>
-					))}
+				<div className="grid gap-4 p-4 place-items-center">
+					<ProductsList products={products} />
+					<button
+						onClick={() => setCount((c) => c + 1)}
+						className="bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-400 active:bg-blue-500"
+					>
+						Load more
+					</button>
 				</div>
 			)}
-			{/* <ProductsList products={products} /> */}
 		</>
 	);
 }
 
-// type Products = {
-// 	products: TProducts[];
-// };
-// function ProductsList({ products }: Products) {
-// 	console.log(products);
-// 	return (
-// 		<>
-// 			<div>{products.map((product) => console.log(product))}</div>
-// 		</>
-// 	);
-// }
-
-// function ProductItem({});
+type ProductListProps = {
+	products: TProducts[];
+};
+function ProductsList({ products }: ProductListProps) {
+	return (
+		<>
+			<div className="grid  grid-cols-4 gap-4 p-4">
+				{products.map((product) => (
+					<ProductItem key={product.id} product={product} />
+				))}
+			</div>
+		</>
+	);
+}
+type ProductItemProps = {
+	product: TProducts;
+};
+function ProductItem({ product }: ProductItemProps) {
+	return (
+		<>
+			<div className="p-5 bg-slate-200 ">
+				<h1>{product.title}</h1>
+				<span>$ {product.price}</span>
+				<img src={product.images[0]} alt="" />
+			</div>
+		</>
+	);
+}

@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.circle {
+/* .circle {
 	@apply w-3 h-3 rounded-full  border border-white;
 }
 
 .circle.current-circle {
 	@apply bg-white;
+} */
+
+ul > li {
+	@apply bg-slate-300 m-5;
 }

@@ -8,7 +8,9 @@
 
 // import LoadMore from './mini-projects/5 - LoadMore/LoadMore';
 
-import SideMenu from './mini-projects/6 - RecursiveNavMenu/SideMenu';
+// import SideMenu from './mini-projects/6 - RecursiveNavMenu/SideMenu';
+
+import QRCodeGenerator from './mini-projects/7 - QR Generator/QRCodeGenerator';
 function App() {
 	return (
 		<>
@@ -24,7 +26,8 @@ function App() {
 
 			{/* <LoadMore limit={10} /> */}
 
-			<SideMenu />
+			{/* <SideMenu /> */}
+			<QRCodeGenerator />
 		</>
 	);
 }

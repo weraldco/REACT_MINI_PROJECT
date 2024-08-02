@@ -13,8 +13,8 @@
 // import SideMenu from './mini-projects/6 - RecursiveNavMenu/SideMenu';
 
 // import QRCodeGenerator from './mini-projects/7 - QR Generator/QRCodeGenerator';
-import ScrollIndicator from './mini-projects/9  - Custom Scroll Indicator/ScrollIndicator';
-
+// import ScrollIndicator from './mini-projects/9  - Custom Scroll Indicator/ScrollIndicator';
+import Tabs from './mini-projects/10 - Tabs/Tabs';
 function App() {
 	return (
 		<>
@@ -34,7 +34,8 @@ function App() {
 			{/* <QRCodeGenerator /> */}
 			{/* <SwitchTheme /> */}
 
-			<ScrollIndicator />
+			{/* <ScrollIndicator /> */}
+			<Tabs />
 		</>
 	);
 }

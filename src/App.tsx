@@ -1,6 +1,6 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
-import SwitchTheme from './mini-projects/8 - Switch Dark and Light/SwtichTheme';
+// import SwitchTheme from './mini-projects/8 - Switch Dark and Light/SwtichTheme';
 
 // import RandomColor from './mini-projects/2 - Random Color Generator/RandomColorGenerator';
 
@@ -13,6 +13,8 @@ import SwitchTheme from './mini-projects/8 - Switch Dark and Light/SwtichTheme';
 // import SideMenu from './mini-projects/6 - RecursiveNavMenu/SideMenu';
 
 // import QRCodeGenerator from './mini-projects/7 - QR Generator/QRCodeGenerator';
+import ScrollIndicator from './mini-projects/9  - Custom Scroll Indicator/ScrollIndicator';
+
 function App() {
 	return (
 		<>
@@ -30,7 +32,9 @@ function App() {
 
 			{/* <SideMenu /> */}
 			{/* <QRCodeGenerator /> */}
-			<SwitchTheme />
+			{/* <SwitchTheme /> */}
+
+			<ScrollIndicator />
 		</>
 	);
 }

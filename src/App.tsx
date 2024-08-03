@@ -18,7 +18,9 @@
 
 // import Modal from './mini-projects/11 - Modal/Modal';
 
-import GithubProfile from './mini-projects/12 - GitHub Profile Finder/GithubProfile';
+// import GithubProfile from './mini-projects/12 - GitHub Profile Finder/GithubProfile';
+
+import SearchAutocomplete from './mini-projects/13 - Search Autocomplete/SearchAutocomplete';
 function App() {
 	return (
 		<>
@@ -42,7 +44,9 @@ function App() {
 			{/* <Tabs /> */}
 			{/* <Modal /> */}
 
-			<GithubProfile />
+			{/* <GithubProfile /> */}
+
+			<SearchAutocomplete />
 		</>
 	);
 }

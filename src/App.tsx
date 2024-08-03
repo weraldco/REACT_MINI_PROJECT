@@ -14,7 +14,9 @@
 
 // import QRCodeGenerator from './mini-projects/7 - QR Generator/QRCodeGenerator';
 // import ScrollIndicator from './mini-projects/9  - Custom Scroll Indicator/ScrollIndicator';
-import Tabs from './mini-projects/10 - Tabs/Tabs';
+// import Tabs from './mini-projects/10 - Tabs/Tabs';
+
+import Modal from './mini-projects/11 - Modal/Modal';
 function App() {
 	return (
 		<>
@@ -35,7 +37,8 @@ function App() {
 			{/* <SwitchTheme /> */}
 
 			{/* <ScrollIndicator /> */}
-			<Tabs />
+			{/* <Tabs /> */}
+			<Modal />
 		</>
 	);
 }

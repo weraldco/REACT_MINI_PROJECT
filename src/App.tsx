@@ -16,7 +16,9 @@
 // import ScrollIndicator from './mini-projects/9  - Custom Scroll Indicator/ScrollIndicator';
 // import Tabs from './mini-projects/10 - Tabs/Tabs';
 
-import Modal from './mini-projects/11 - Modal/Modal';
+// import Modal from './mini-projects/11 - Modal/Modal';
+
+import GithubProfile from './mini-projects/12 - GitHub Profile Finder/GithubProfile';
 function App() {
 	return (
 		<>
@@ -38,7 +40,9 @@ function App() {
 
 			{/* <ScrollIndicator /> */}
 			{/* <Tabs /> */}
-			<Modal />
+			{/* <Modal /> */}
+
+			<GithubProfile />
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import UserLists from './UserLists';
 
 type UsersDataT = {
@@ -10,17 +10,17 @@ type UsersDataT = {
 
 export default function SearchAutocomplete() {
 	const [usersData, setUsersData] = useState<UsersDataT[]>([]);
-	const [searchStr, setSearchStr] = useState('');
+	const [query, setQuery] = useState('');
 	const [loading, setLoading] = useState(false);
 
-	async function fetchData() {
+	async function fetchUserData() {
 		try {
 			setLoading(true);
 			const response = await fetch('https://dummyjson.com/users');
 			const data = await response.json();
+			setLoading(false);
 
 			setUsersData(data.users);
-			setLoading(false);
 		} catch (error) {
 			console.error(error);
 			setLoading(false);
@@ -28,38 +28,33 @@ export default function SearchAutocomplete() {
 	}
 
 	useEffect(() => {
-		fetchData();
+		fetchUserData();
 	}, []);
 
-	// if (searchStr && searchStr.length > 0) {
-	// 	const copyUserData = [...usersData];
-	// 	const newData = copyUserData.filter((user) =>
-	// 		user.firstName.includes(searchStr)
-	// 	);
-	// 	// setUsersData(newData);
-	// }
+	const filteredItem = useMemo(() => {
+		return usersData.filter((user) => {
+			return user.firstName.toLowerCase().includes(query.toLowerCase());
+		});
+	}, [usersData, query]);
 
-	function handleChange(e) {
-		setSearchStr(e.target.value);
-		const copyUserData = [...usersData];
-		const newData = copyUserData.filter((user) =>
-			user.firstName.toLowerCase().includes(searchStr)
-		);
-	}
-
-	console.log(searchStr);
 	return (
 		<>
-			<div className="grid place-items-center p-5">
+			<div className="grid place-content-center p-5">
 				<input
-					className="bg-slate-200 px-4 py-2 rounded-xl outline-none"
-					placeholder="Enter a text.."
+					className="bg-slate-300 px-4 py-2 rounded-full outline-none"
 					type="text"
-					value={searchStr}
-					onChange={(e) => handleChange(e)}
+					placeholder="Search for.."
+					value={query}
+					onChange={(e) => {
+						setQuery(e.target.value);
+					}}
 				/>
+				{loading ? (
+					<div>Loading data...</div>
+				) : (
+					<UserLists filteredItem={filteredItem} />
+				)}
 			</div>
-			<UserLists userdata={usersData} loading={loading} />
 		</>
 	);
 }

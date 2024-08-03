@@ -6,24 +6,18 @@ type UsersDataT = {
 };
 
 type UserListsProps = {
-	userdata: UsersDataT[];
-	loading: boolean;
+	filteredItem: UsersDataT[];
 };
-export default function UserLists({ userdata, loading }: UserListsProps) {
+
+export default function UserLists({ filteredItem }: UserListsProps) {
 	return (
 		<>
-			<div className="grid place-items-center gap-2">
-				{loading ? (
-					<p>Loading data...</p>
-				) : (
-					userdata.map((user) => (
-						<div className="grid bg-slate-400 w-52 p-2" key={user.id}>
-							<div className="text-left bg-slate-400 w-full">
-								{user.id}. {user.firstName} {user.maidenName} {user.lastName}
-							</div>
-						</div>
-					))
-				)}
+			<div className="grid gap-2 mt-5">
+				{filteredItem.map((user) => (
+					<div key={user.id} className="bg-blue-200 p-2">
+						{user.id}. {user.firstName} {user.maidenName} {user.lastName}
+					</div>
+				))}
 			</div>
 		</>
 	);

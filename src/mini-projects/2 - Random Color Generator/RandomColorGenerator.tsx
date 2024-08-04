@@ -79,17 +79,26 @@ export default function RandomColor() {
 			<div
 				className="bg-changer"
 				style={{
-					backgroundColor,
+					backgroundColor: backgroundColor,
+					height: '100vh',
+					display: 'grid',
+					placeItems: 'center',
 				}}
-			></div>
-			<div className="container">
-				<div>
-					<h1>Random Color Generator</h1>
-					<button onClick={handleRandomHex}>Get Random Hex</button>
-					<p>{randomHex.length !== 0 ? `#${randomHex.join('')}` : ''}</p>
-					<p>
-						{rgb.length !== 0 ? `rgb (${rgb[0]}, ${rgb[1]}, ${rgb[2]})` : ''}
-					</p>
+			>
+				<div className="container ">
+					<div className="grid place-items-center">
+						<h1 className="text-3xl font-bold">Random Color Generator</h1>
+						<button
+							className="bg-blue-400 p-5 text-white rounded-full hover:bg-blue-300 transition-all"
+							onClick={handleRandomHex}
+						>
+							Get Random Color
+						</button>
+						<p>{randomHex.length !== 0 ? `#${randomHex.join('')}` : ''}</p>
+						<p>
+							{rgb.length !== 0 ? `rgb (${rgb[0]}, ${rgb[1]}, ${rgb[2]})` : ''}
+						</p>
+					</div>
 				</div>
 			</div>
 		</>

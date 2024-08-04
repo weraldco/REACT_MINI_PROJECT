@@ -28,12 +28,14 @@ type ModalContainerProps = {
 function ModalContainer({ handleModalClick }: ModalContainerProps) {
 	return (
 		<>
-			<div className="bg-gray-400 opacity-50 absolute left-0 right-0 bottom-0 top-0 z-10"></div>
-			<div className="bg-white p-5 w-3/4 z-20">
+			<div className="bg-gray-400 opacity-50 absolute left-0 right-0 top-0 bottom-0">
+				a
+			</div>
+			<div className="bg-white p-5 w-3/4 z-50 absolute">
 				<h1 className="text-2xl font-bold -scroll-mb-3">
 					This is modal section
 				</h1>
-				<div className="relative pb-8">
+				<div className="pb-8">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, porro
 					cumque. Odio quisquam harum autem, possimus distinctio quam
 					aspernatur, ea tenetur officia omnis amet ut labore? Quibusdam porro

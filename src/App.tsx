@@ -1,6 +1,12 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
-import Tictactoe from './mini-projects/14 - TicTacToe/Tictactoe';
+import Modal from './mini-projects/11 - Modal/Modal';
+import FeatureFlags from './mini-projects/15 - Features Flags';
+import FeatureFlagGlobalState from './mini-projects/15 - Features Flags/context';
+import RandomColor from './mini-projects/2 - Random Color Generator/RandomColorGenerator';
+
+// import Tictactoe from './mini-projects/14 - TicTacToe/Tictactoe';
+// import Demo from './useContext/Demo';
 
 // import SwitchTheme from './mini-projects/8 - Switch Dark and Light/SwtichTheme';
 
@@ -23,6 +29,7 @@ import Tictactoe from './mini-projects/14 - TicTacToe/Tictactoe';
 // import GithubProfile from './mini-projects/12 - GitHub Profile Finder/GithubProfile';
 
 // import SearchAutocomplete from './mini-projects/13 - Search Autocomplete/SearchAutocomplete';
+
 function App() {
 	return (
 		<>
@@ -49,7 +56,12 @@ function App() {
 			{/* <GithubProfile /> */}
 
 			{/* <SearchAutocomplete /> */}
-			<Tictactoe />
+			{/* <Tictactoe /> */}
+
+			{/* <Demo /> */}
+			<FeatureFlagGlobalState>
+				<FeatureFlags />
+			</FeatureFlagGlobalState>
 		</>
 	);
 }

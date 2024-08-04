@@ -24,11 +24,9 @@ import useLocalStorage from './useLocalStorage';
 
 export default function SwitchTheme() {
 	const [theme, setTheme] = useLocalStorage('theme', 'dark');
-	const [value, setValue] = useCompute(0);
 
 	function handleChangeTheme() {
 		setTheme(theme === 'light' ? 'dark' : 'light');
-		setValue(12);
 	}
 	return (
 		<>
@@ -37,7 +35,6 @@ export default function SwitchTheme() {
             transition-all duration-700`}
 			>
 				<h1 className="text-xl">Switch Themes Dark/Light</h1>
-				<p>{value}</p>
 				<button
 					className="p-3 bg-blue-500 text-white rounded-full"
 					onClick={handleChangeTheme}

@@ -1,9 +1,13 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
-import Modal from './mini-projects/11 - Modal/Modal';
-import FeatureFlags from './mini-projects/15 - Features Flags';
-import FeatureFlagGlobalState from './mini-projects/15 - Features Flags/context';
-import RandomColor from './mini-projects/2 - Random Color Generator/RandomColorGenerator';
+import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
+import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
+import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
+
+// import Modal from './mini-projects/11 - Modal/Modal';
+// import FeatureFlags from './mini-projects/15 - Features Flags';
+// import FeatureFlagGlobalState from './mini-projects/15 - Features Flags/context';
+// import RandomColor from './mini-projects/2 - Random Color Generator/RandomColorGenerator';
 
 // import Tictactoe from './mini-projects/14 - TicTacToe/Tictactoe';
 // import Demo from './useContext/Demo';
@@ -34,7 +38,9 @@ function App() {
 	return (
 		<>
 			{/* <Accordion /> */}
+
 			{/* <RandomColor /> */}
+
 			{/* <StarRating /> */}
 
 			{/* <ImageSliderTwo
@@ -46,22 +52,32 @@ function App() {
 			{/* <LoadMore limit={10} /> */}
 
 			{/* <SideMenu /> */}
+
 			{/* <QRCodeGenerator /> */}
+
 			{/* <SwitchTheme /> */}
 
 			{/* <ScrollIndicator /> */}
+
 			{/* <Tabs /> */}
+
 			{/* <Modal /> */}
 
 			{/* <GithubProfile /> */}
 
 			{/* <SearchAutocomplete /> */}
+
 			{/* <Tictactoe /> */}
 
 			{/* <Demo /> */}
-			<FeatureFlagGlobalState>
+
+			{/* <FeatureFlagGlobalState>
 				<FeatureFlags />
-			</FeatureFlagGlobalState>
+			</FeatureFlagGlobalState> */}
+
+			<FetchCustomHook />
+			<ModalClickOutside />
+			<WindowSizeChanged />
 		</>
 	);
 }

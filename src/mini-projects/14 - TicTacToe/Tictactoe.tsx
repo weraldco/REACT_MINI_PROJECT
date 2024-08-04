@@ -101,6 +101,7 @@ export default function Tictactoe() {
 			setGameStatus(`Next player is ${turn.toUpperCase()}`);
 		}
 	}, [turn, winner]);
+
 	return (
 		<>
 			<div className="grid place-items-center p-5">

@@ -1,5 +1,7 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
+import Tictactoe from './mini-projects/14 - TicTacToe/Tictactoe';
+
 // import SwitchTheme from './mini-projects/8 - Switch Dark and Light/SwtichTheme';
 
 // import RandomColor from './mini-projects/2 - Random Color Generator/RandomColorGenerator';
@@ -20,7 +22,7 @@
 
 // import GithubProfile from './mini-projects/12 - GitHub Profile Finder/GithubProfile';
 
-import SearchAutocomplete from './mini-projects/13 - Search Autocomplete/SearchAutocomplete';
+// import SearchAutocomplete from './mini-projects/13 - Search Autocomplete/SearchAutocomplete';
 function App() {
 	return (
 		<>
@@ -46,7 +48,8 @@ function App() {
 
 			{/* <GithubProfile /> */}
 
-			<SearchAutocomplete />
+			{/* <SearchAutocomplete /> */}
+			<Tictactoe />
 		</>
 	);
 }

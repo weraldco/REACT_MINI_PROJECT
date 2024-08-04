@@ -20,3 +20,7 @@ ul > li {
 .light {
 	@apply bg-white text-black;
 }
+
+.tictac-btn {
+	@apply bg-gray-200 hover:bg-gray-100 transition-all text-4xl font-medium text-gray-700 overflow-hidden  w-24 h-24;
+}

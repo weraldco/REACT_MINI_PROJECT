@@ -44,7 +44,6 @@ export default function Tictactoe() {
 	const [winner, setWinner] = useState<string | null>(null);
 	const [turn, setTurn] = useState('x');
 	const [gameStatus, setGameStatus] = useState('');
-	const [restart, setRestart] = useState(false);
 	const [gameStart, setGameStart] = useState(false);
 	function checkWinner(): string | null {
 		const combinationList = [

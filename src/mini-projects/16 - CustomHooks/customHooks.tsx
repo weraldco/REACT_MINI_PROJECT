@@ -30,3 +30,16 @@ export function useFetchData(url: string) {
 
 	return { data, loading };
 }
+
+export function useOutsideClick(ref, handler) {
+	function listener(event) {
+		if (!ref.current) return;
+		return handler(event);
+	}
+	console.log(handler);
+	console.log(ref);
+
+	useEffect(() => {
+		document.addEventListener('mousedown', listener);
+	}, [ref, handler]);
+}

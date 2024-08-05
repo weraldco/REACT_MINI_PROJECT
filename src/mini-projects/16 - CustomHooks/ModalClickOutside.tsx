@@ -11,7 +11,7 @@ export default function ModalClickOutside() {
 
 	return (
 		<>
-			<div className="w-full h-full bg-gray-400">
+			<div className="w-full h-full">
 				<h1 className="text-3xl font-bold">Click Outside Close</h1>
 				<button
 					className="bg-blue-500 p-3 text-white rounded-md hover:bg-blue-400 transition-all"

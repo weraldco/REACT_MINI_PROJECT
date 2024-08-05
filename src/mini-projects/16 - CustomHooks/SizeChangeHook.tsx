@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useResponsiveSize } from './customHooks';
 
 export default function WindowSizeChanged() {
-	const [xSize, setXSize] = useState(document.documentElement.clientWidth);
-	const [ySize, setYSize] = useState(document.documentElement.clientHeight);
-
-	// useEffect(() => {}, []);
+	const size = useResponsiveSize();
 	return (
 		<>
 			<div>
-				<span>Height: {ySize} </span>
-				<span>Width: {xSize} </span>
+				<span>Height: {size.height} </span>
+				<span>Width: {size.width} </span>
 			</div>
 		</>
 	);

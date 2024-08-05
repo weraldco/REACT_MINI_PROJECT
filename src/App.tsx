@@ -2,6 +2,7 @@
 
 import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
 import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
+import ScrollTopBottom from './mini-projects/16 - CustomHooks/ScrollTopBottom';
 import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
 
 // import Modal from './mini-projects/11 - Modal/Modal';
@@ -75,9 +76,10 @@ function App() {
 				<FeatureFlags />
 			</FeatureFlagGlobalState> */}
 
-			<FetchCustomHook />
-			<ModalClickOutside />
-			<WindowSizeChanged />
+			{/* <FetchCustomHook /> */}
+			<ScrollTopBottom />
+			{/* <ModalClickOutside />
+			<WindowSizeChanged /> */}
 		</>
 	);
 }

@@ -1,9 +1,11 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
-import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
-import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
-import ScrollTopBottom from './mini-projects/16 - CustomHooks/ScrollTopBottom';
-import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
+import WeatherApp from './mini-projects/17 - WeatherApp/WeatherApp';
+
+// import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
+// import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
+// import ScrollTopBottom from './mini-projects/16 - CustomHooks/ScrollTopBottom';
+// import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
 
 // import Modal from './mini-projects/11 - Modal/Modal';
 // import FeatureFlags from './mini-projects/15 - Features Flags';
@@ -77,9 +79,11 @@ function App() {
 			</FeatureFlagGlobalState> */}
 
 			{/* <FetchCustomHook /> */}
-			<ScrollTopBottom />
+			{/* <ScrollTopBottom /> */}
 			{/* <ModalClickOutside />
 			<WindowSizeChanged /> */}
+
+			<WeatherApp />
 		</>
 	);
 }

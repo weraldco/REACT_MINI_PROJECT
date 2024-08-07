@@ -1,5 +1,6 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
+import HourlyWeather from './mini-projects/17 - WeatherApp/HourlyWeather';
 import WeatherApp from './mini-projects/17 - WeatherApp/WeatherApp';
 
 // import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
@@ -83,7 +84,7 @@ function App() {
 			{/* <ModalClickOutside />
 			<WindowSizeChanged /> */}
 
-			<WeatherApp />
+			<HourlyWeather />
 		</>
 	);
 }

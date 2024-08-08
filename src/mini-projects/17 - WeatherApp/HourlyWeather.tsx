@@ -13,7 +13,7 @@ export default function HourlyWeather() {
 			if (response.ok) {
 				const data = await response.json();
 
-				setData(data);
+				setData(data.list);
 				setLoading(false);
 			} else {
 				setError(response.status);
@@ -27,10 +27,34 @@ export default function HourlyWeather() {
 
 	useEffect(() => {
 		fetchData(
-			`https://api.openweathermap.org/data/2.5/onecall?lat=14.58986138351512&lon=120.98178900663554&exclude=current,minutely,hourly,alerts&appid=837aa0f0761a8644e2a8f53ccd5e2529&units=metric`
+			`https://api.openweathermap.org/data/2.5/forecast?lat=14.58986138351512&lon=120.98178900663554&appid=${apiKey}`
 		);
 	}, []);
 
-	console.log(data);
-	return <></>;
+	if (data !== undefined) {
+		console.log(getWeatherForFiveDay());
+	}
+	function getWeatherForFiveDay() {
+		const storeData = [];
+		const weatherData = [];
+		data.map((day) => {
+			const [date, time] = day.dt_txt.split(' ');
+			if (!storeData.includes(date)) storeData.push(date);
+		});
+
+		console.log(weatherData);
+
+		if (storeData !== undefined) {
+			storeData.map((d) => {
+				if (data.find((x) => x.dt_txt === d + ' 00:00:00') === undefined) {
+					weatherData.push(data.find((x) => x.dt_txt === d + ' 09:00:00'));
+				} else {
+					weatherData.push(data.find((x) => x.dt_txt === d + ' 00:00:00'));
+				}
+			});
+		}
+
+		return weatherData;
+	}
+	// console.log(data);
 }

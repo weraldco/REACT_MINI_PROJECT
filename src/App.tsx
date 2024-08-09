@@ -2,6 +2,7 @@
 
 import HourlyWeather from './mini-projects/17 - WeatherApp/HourlyWeather';
 import WeatherApp from './mini-projects/17 - WeatherApp/WeatherApp';
+import WeeklyWeather from './mini-projects/17 - WeatherApp/WeeklyWeather';
 
 // import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
 // import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
@@ -84,7 +85,7 @@ function App() {
 			{/* <ModalClickOutside />
 			<WindowSizeChanged /> */}
 
-			<HourlyWeather />
+			<WeeklyWeather />
 		</>
 	);
 }

@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 
 export default function HourlyWeather() {
 	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState<number>();
-	const [data, setData] = useState<DataT | undefined>(undefined);
+	const [fiveDayWeatherData, setFiveDayWeatherData] = useState<[]>([]);
+	const [data, setData] = useState<[]>([]);
+	const [error, setError] = useState('');
 	const apiKey = process.env.REACT_APP_API_URL;
 
 	async function fetchData(url: string) {
@@ -31,18 +32,13 @@ export default function HourlyWeather() {
 		);
 	}, []);
 
-	if (data !== undefined) {
-		console.log(getWeatherForFiveDay());
-	}
 	function getWeatherForFiveDay() {
-		const storeData = [];
+		const storeData: string[] = [];
 		const weatherData = [];
-		data.map((day) => {
+		data?.map((day) => {
 			const [date, time] = day.dt_txt.split(' ');
 			if (!storeData.includes(date)) storeData.push(date);
 		});
-
-		console.log(weatherData);
 
 		if (storeData !== undefined) {
 			storeData.map((d) => {
@@ -56,5 +52,16 @@ export default function HourlyWeather() {
 
 		return weatherData;
 	}
-	// console.log(data);
+
+	if (data !== undefined) {
+		getWeatherForFiveDay().map((d) => console.log(d));
+	}
+
+	return (
+		<>
+			<button className="p-5 bg-blue-500" onClick={() => {}}>
+				Test
+			</button>
+		</>
+	);
 }

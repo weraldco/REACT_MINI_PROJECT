@@ -1,8 +1,14 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
-import HourlyWeather from './mini-projects/17 - WeatherApp/HourlyWeather';
-import WeatherApp from './mini-projects/17 - WeatherApp/WeatherApp';
-import WeeklyWeather from './mini-projects/17 - WeatherApp/WeeklyWeather';
+// import HourlyWeather from './mini-projects/17 - WeatherApp/HourlyWeather';
+// import WeatherApp from './mini-projects/17 - WeatherApp/WeatherApp';
+// import WeeklyWeather from './mini-projects/17 - WeatherApp/WeeklyWeather';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './mini-projects/18 - RecipeApp/components/Navbar';
+import Details from './mini-projects/18 - RecipeApp/pages/details/Details';
+import Favorites from './mini-projects/18 - RecipeApp/pages/favorites/Favorites';
+import RecipeApp from './mini-projects/18 - RecipeApp/pages/RecipeApp';
+import Home from './mini-projects/6 - RecursiveNavMenu/pages/Home';
 
 // import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
 // import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
@@ -85,7 +91,15 @@ function App() {
 			{/* <ModalClickOutside />
 			<WindowSizeChanged /> */}
 
-			<WeeklyWeather />
+			{/* <WeeklyWeather /> */}
+			<Navbar />
+			<div>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/favorites" element={<Favorites />} />
+					<Route path="/recipe-item/:id" element={<Details />} />
+				</Routes>
+			</div>
 		</>
 	);
 }

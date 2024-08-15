@@ -31,15 +31,34 @@ export function useFetchData(url: string) {
 	return { data, loading };
 }
 
-export function useOutsideClick(ref, handler) {
-	function listener(event) {
+export function useOutsideClick(ref, handler: () => void) {
+	function listener() {
 		if (!ref.current) return;
-		return handler(event);
+		return handler();
 	}
-	console.log(handler);
-	console.log(ref);
 
 	useEffect(() => {
 		document.addEventListener('mousedown', listener);
 	}, [ref, handler]);
+}
+
+export function useResponsiveSize() {
+	const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+	function handleResize() {
+		setWindowSize({
+			width: window.innerWidth,
+			height: window.innerHeight,
+		});
+	}
+	useEffect(() => {
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
+	return windowSize;
 }

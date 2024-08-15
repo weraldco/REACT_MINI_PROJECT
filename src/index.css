@@ -10,10 +10,6 @@
 	@apply bg-white;
 } */
 
-ul > li {
-	@apply bg-slate-300 m-5;
-}
-
 .dark {
 	@apply bg-black text-white;
 }

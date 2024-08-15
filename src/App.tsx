@@ -1,11 +1,27 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
+<<<<<<< HEAD
 import { Provider } from 'react-redux';
 import Login from './ReduxToolkit/Login';
 import { store } from './ReduxToolkit/store';
 
 // import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
 // import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
+=======
+// import HourlyWeather from './mini-projects/17 - WeatherApp/HourlyWeather';
+// import WeatherApp from './mini-projects/17 - WeatherApp/WeatherApp';
+// import WeeklyWeather from './mini-projects/17 - WeatherApp/WeeklyWeather';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './mini-projects/18 - RecipeApp/components/Navbar';
+import Details from './mini-projects/18 - RecipeApp/pages/details/Details';
+import Favorites from './mini-projects/18 - RecipeApp/pages/favorites/Favorites';
+import RecipeApp from './mini-projects/18 - RecipeApp/pages/RecipeApp';
+import Home from './mini-projects/6 - RecursiveNavMenu/pages/Home';
+
+// import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
+// import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
+// import ScrollTopBottom from './mini-projects/16 - CustomHooks/ScrollTopBottom';
+>>>>>>> 28484bea55d49c10b606d8857c200d437329c3e7
 // import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
 
 // import Modal from './mini-projects/11 - Modal/Modal';
@@ -82,9 +98,26 @@ function App() {
 				<FeatureFlags />
 			</FeatureFlagGlobalState> */}
 
+<<<<<<< HEAD
 			{/* <FetchCustomHook />
 			<ModalClickOutside />
 			<WindowSizeChanged /> */}
+=======
+			{/* <FetchCustomHook /> */}
+			{/* <ScrollTopBottom /> */}
+			{/* <ModalClickOutside />
+			<WindowSizeChanged /> */}
+
+			{/* <WeeklyWeather /> */}
+			<Navbar />
+			<div>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/favorites" element={<Favorites />} />
+					<Route path="/recipe-item/:id" element={<Details />} />
+				</Routes>
+			</div>
+>>>>>>> 28484bea55d49c10b606d8857c200d437329c3e7
 		</>
 	);
 }

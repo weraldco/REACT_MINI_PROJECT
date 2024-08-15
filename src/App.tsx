@@ -1,8 +1,12 @@
 // import Accordion from './mini-projects/1 - Accordion/Accordion';
 
-import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
-import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
-import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
+import { Provider } from 'react-redux';
+import Login from './ReduxToolkit/Login';
+import { store } from './ReduxToolkit/store';
+
+// import FetchCustomHook from './mini-projects/16 - CustomHooks/FetchCustomHook';
+// import ModalClickOutside from './mini-projects/16 - CustomHooks/ModalClickOutside';
+// import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
 
 // import Modal from './mini-projects/11 - Modal/Modal';
 // import FeatureFlags from './mini-projects/15 - Features Flags';
@@ -37,6 +41,9 @@ import WindowSizeChanged from './mini-projects/16 - CustomHooks/SizeChangeHook';
 function App() {
 	return (
 		<>
+			<Provider store={store}>
+				<Login />
+			</Provider>
 			{/* <Accordion /> */}
 
 			{/* <RandomColor /> */}
@@ -75,9 +82,9 @@ function App() {
 				<FeatureFlags />
 			</FeatureFlagGlobalState> */}
 
-			<FetchCustomHook />
+			{/* <FetchCustomHook />
 			<ModalClickOutside />
-			<WindowSizeChanged />
+			<WindowSizeChanged /> */}
 		</>
 	);
 }

@@ -1,9 +1,10 @@
 // first you make your configuration store.
 import { configureStore } from '@reduxjs/toolkit';
-import loginReducer from './LoginSlice';
+import counterReducer from './counterSlice';
 
 export const store = configureStore({
 	reducer: {
+		counter: counterReducer,
 		login: loginReducer,
 	},
 });

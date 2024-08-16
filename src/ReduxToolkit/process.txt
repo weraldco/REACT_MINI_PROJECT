@@ -1,0 +1,4 @@
+1. Create store config
+2. Set Provider in which component can access state
+3. Create Slice
+4. setup the component

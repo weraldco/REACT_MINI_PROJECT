@@ -1,25 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface LoginState {
-	username: string;
+	value: number;
 }
 
 const initialState: LoginState = {
-	username: '',
+	value: 0,
 };
 
 const loginSlice = createSlice({
-	name: 'login',
+	name: 'counter',
 	initialState,
 	reducers: {
-		loggin: (state) => {
-			state.value = 'Pedro';
+		increment: (state) => {
+			state.value += 1;
 		},
-		loggingOut: (state) => {
-			state.value = initialState;
+		decrement: (state) => {
+			state.value -= 1;
 		},
 	},
 });
 
-export const { loggin, loggingOut } = loginSlice.actions;
+export const { increment, decrement } = loginSlice.actions;
 export default loginSlice.reducer;

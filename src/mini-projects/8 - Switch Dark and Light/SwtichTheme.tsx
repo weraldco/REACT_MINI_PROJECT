@@ -1,7 +1,6 @@
 // import { useState } from 'react';
 
 import Themes from './Themes';
-import useCompute from './useCompute';
 import useLocalStorage from './useLocalStorage';
 
 // export default function SwitchTheme() {
@@ -32,7 +31,7 @@ export default function SwitchTheme() {
 		<>
 			<div
 				className={`${theme} grid place-items-center h-svh 
-            transition-all duration-700`}
+            transition-all duration-700 w-full`}
 			>
 				<h1 className="text-xl">Switch Themes Dark/Light</h1>
 				<button

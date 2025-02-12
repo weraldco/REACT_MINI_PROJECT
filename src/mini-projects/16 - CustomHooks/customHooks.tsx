@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 
 type DataT = {
@@ -31,7 +32,10 @@ export function useFetchData(url: string) {
 	return { data, loading };
 }
 
-export function useOutsideClick(ref, handler: () => void) {
+export function useOutsideClick(
+	ref: React.MutableRefObject<HTMLDivElement | null>,
+	handler: () => void
+) {
 	function listener() {
 		if (!ref.current) return;
 		return handler();

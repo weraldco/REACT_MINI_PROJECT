@@ -8,11 +8,21 @@ export default function Counter() {
 
 	return (
 		<>
-			<div>
-				<h2>{count}</h2>
+			<div className="grid place-content-center gap-3">
+				<h2 className="text-5xl text-center">{count}</h2>
 				<div>
-					<button onClick={() => dispatch(increment())}>Increment</button>
-					<button onClick={() => dispatch(decrement())}>Decrement</button>
+					<button
+						onClick={() => dispatch(increment())}
+						className="p-2 bg-blue-400 mr-2"
+					>
+						Increment
+					</button>
+					<button
+						onClick={() => dispatch(decrement())}
+						className="p-2 bg-blue-400"
+					>
+						Decrement
+					</button>
 				</div>
 			</div>
 		</>

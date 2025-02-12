@@ -1,10 +1,11 @@
-type UserdataT = {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+export type UserdataT = {
 	avatar_url: string;
 	html_url: string;
 	name: string;
 	email: string;
 	public_repos: number;
-	created_at: string;
+	created_at: Date;
 };
 
 type GithubProfileResultProps = {
@@ -14,14 +15,8 @@ type GithubProfileResultProps = {
 export default function GithubProfileResult({
 	userdata,
 }: GithubProfileResultProps) {
-	const {
-		html_url,
-		avatar_url,
-		name,
-		email,
-		public_repos,
-		created_at,
-	}: UserdataT = userdata;
+	const { html_url, avatar_url, name, public_repos, created_at }: UserdataT =
+		userdata;
 
 	const dateJoined = new Date(created_at);
 	return (

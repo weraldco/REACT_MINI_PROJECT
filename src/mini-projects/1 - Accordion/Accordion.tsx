@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 function Accordion() {
 	const [selected, setSelected] = useState(-1);
@@ -28,7 +29,7 @@ function Accordion() {
 		},
 	];
 
-	const [postsData, setPostsData] = useState(posts);
+	const [postsData] = useState(posts);
 
 	function handleSingleSelection(id: number) {
 		setSelected(id === selected ? -1 : id);

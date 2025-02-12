@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 
 export default function Tictactoe() {
@@ -118,7 +119,7 @@ export default function Tictactoe() {
 
 				<span className="mt-5 font-bold text-lg">{gameStatus}</span>
 				<button
-					className="p-1 bg-blue-500 text-sm rounded-full px-3 text-white hover:bg-blue-400"
+					className=" bg-blue-500 text-xl rounded-full px-4 py-2 text-white hover:bg-blue-400 duration-200"
 					onClick={() => handleStartGame()}
 				>
 					{buttons.every((btn) => btn.value !== '' || gameStart)

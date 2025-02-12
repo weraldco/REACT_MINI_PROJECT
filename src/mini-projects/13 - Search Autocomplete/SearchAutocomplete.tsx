@@ -45,11 +45,15 @@ export default function SearchAutocomplete() {
 
 	return (
 		<>
-			<div className="grid place-content-center p-5">
+			<div className="grid place-content-center p-5 gap-4">
+				<div className="text-green-500 text-xs w-[400px] text-center">
+					To use this, you need to enter a name below, and all user with
+					corresponding letter or matches the designated name pop-up .
+				</div>
 				<input
-					className="bg-slate-300 px-4 py-2 rounded-full outline-none"
+					className="border border-gray-500 px-4 py-4 rounded-full outline-none text-xl"
 					type="text"
-					placeholder="Search an user.."
+					placeholder="Search any user.."
 					value={query}
 					onChange={(e) => {
 						setQuery(e.target.value);

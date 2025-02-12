@@ -28,7 +28,7 @@ export default function WeatherData({ data }: WeatherDataProps) {
 	}
 	return (
 		<>
-			<div className="bg-white p-3 mt-5 grid place-items-center pb-10">
+			<div className="bg-white p-3 mt-5 grid place-items-center pb-10 rounded-xl">
 				<div>{getDate()}</div>
 				<div className="p-3">
 					<img

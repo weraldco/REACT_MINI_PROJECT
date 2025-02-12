@@ -13,7 +13,7 @@ export default function StarRating({ noOfStars = 5 }) {
 		setHover(rating);
 	}
 	return (
-		<>
+		<div className="flex items-center justify-center h-screen">
 			<div className="grid grid-flow-col-dense">
 				{[...Array(noOfStars)].map((_, index) => {
 					index += 1;
@@ -33,6 +33,6 @@ export default function StarRating({ noOfStars = 5 }) {
 			<p className="grid justify-center text-4xl">
 				Rating {rating}/{noOfStars}
 			</p>
-		</>
+		</div>
 	);
 }

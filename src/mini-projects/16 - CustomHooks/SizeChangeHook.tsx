@@ -1,17 +1,40 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from 'react';
 
 export default function WindowSizeChanged() {
-	const [xSize, setXSize] = useState(document.documentElement.clientWidth);
-	const [ySize, setYSize] = useState(document.documentElement.clientHeight);
-
-	// useEffect(() => {}, []);
+	const size = useWindowResize();
 	return (
 		<>
 			<div>
-				<span>Height: {ySize} </span>
-				<span>Width: {xSize} </span>
+				<span>Height: {size.width} px </span>
+				<span>Width: {size.height} px </span>
 			</div>
 		</>
 	);
 }
-597;
+
+const useWindowResize = () => {
+	const [windowSize, setWindowSize] = useState<{
+		width: number | undefined;
+		height: number | undefined;
+	}>({
+		width: undefined,
+		height: undefined,
+	});
+
+	useEffect(() => {
+		const handleRezize = () => {
+			setWindowSize({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			});
+		};
+
+		window.addEventListener('resize', handleRezize);
+
+		handleRezize();
+
+		return () => window.removeEventListener('resize', handleRezize);
+	}, []);
+	return windowSize;
+};

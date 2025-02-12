@@ -3,7 +3,7 @@ import { useOutsideClick } from './customHooks';
 
 export default function ModalClickOutside() {
 	const [openModal, setOpenModal] = useState(false);
-	const divRef = useRef();
+	const divRef = useRef<HTMLDivElement | null>(null);
 
 	useOutsideClick(divRef, () => {
 		setOpenModal(false);

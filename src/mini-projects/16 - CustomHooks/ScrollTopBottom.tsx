@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import FetchCustomHook from './FetchCustomHook';
 
 export default function ScrollTopBottom() {
-	const bottomSection = useRef();
-	const topSection = useRef();
+	const bottomSection = useRef<HTMLButtonElement | null>(null);
+	const topSection = useRef<HTMLButtonElement | null>(null);
 
-	function handleClick(ref) {
-		ref.current.scrollIntoView({ behavior: 'smooth' });
+	function handleClick(ref: React.RefObject<HTMLButtonElement | null>) {
+		if (ref.current) ref.current.scrollIntoView({ behavior: 'smooth' });
 	}
 	return (
 		<>

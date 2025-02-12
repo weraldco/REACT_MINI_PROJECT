@@ -42,13 +42,13 @@ export default function WeatherApp() {
 	console.log(data);
 	return (
 		<>
-			<div className="bg-slate-900 h-screen grid place-items-center">
+			<div className="bg-slate-900 h-screen w-full	 grid place-items-center">
 				<div className="grid place-items-center w-80 ">
 					<Search handleSearch={handleSearch} />
 					{loading ? (
 						<span className="text-white mt-10">Loading data..</span>
 					) : (
-						<div>
+						<div className="">
 							{data !== undefined ? (
 								<WeatherData data={data} />
 							) : (

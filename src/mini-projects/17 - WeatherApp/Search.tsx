@@ -10,7 +10,7 @@ export default function Search({ handleSearch }: SearchProps) {
 		<>
 			<div className="w-full">
 				<input
-					className="bg-white p-3 w-9/12"
+					className="bg-white p-3 w-9/12 outline-none rounded-l-xl"
 					type="text"
 					placeholder="Enter city name.."
 					value={cityName}
@@ -19,7 +19,7 @@ export default function Search({ handleSearch }: SearchProps) {
 					}}
 				/>
 				<button
-					className="bg-blue-500 p-3 text-white hover:bg-blue-400 transition-all w-1/4"
+					className="bg-blue-500 p-3 text-white hover:bg-blue-400 transition-all w-1/4 rounded-r-xl"
 					onClick={() => handleSearch(cityName)}
 				>
 					Search

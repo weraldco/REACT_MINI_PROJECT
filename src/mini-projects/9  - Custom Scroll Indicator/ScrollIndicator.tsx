@@ -65,7 +65,7 @@ function ProductsList({ products, scrollPercentage }: ProductsProps) {
 	return (
 		<>
 			<div className="grid place-items-center relative m-20">
-				<div className="fixed z-50 p-5 bg-white left-0 right-0 top-0 grid place-content-center">
+				<div className="fixed z-0 p-5 bg-white left-0 right-0 top-0 grid place-content-center">
 					<h1 className="text-4xl font-bold">Custom Scroll Indicator</h1>
 					<div className="border-2 h-3 rounded-full">
 						<div

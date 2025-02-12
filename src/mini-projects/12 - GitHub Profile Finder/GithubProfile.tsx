@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import GithubProfileResult from './GithubProfileResult';
-type UserdataT = {
-	avatar_url: string;
-	html_url: string;
-	name: string;
-	email: string;
-	public_repos: number;
-};
+import GithubProfileResult, { UserdataT } from './GithubProfileResult';
+// type UserdataT = {
+// 	avatar_url: string;
+// 	html_url: string;
+// 	name: string;
+// 	email: string;
+// 	public_repos: number;
+// 	create_at: Date;
+// };
 export default function GithubProfile() {
 	const [username, setUsername] = useState('');
 	const [userdata, setUserdata] = useState<UserdataT>();

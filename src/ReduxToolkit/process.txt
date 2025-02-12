@@ -1,4 +1,23 @@
 1. Create store config
-2. Set Provider in which component can access state
+   - declare a variable for store config
+   > set 2 types of state
+         export type RootState = ReturnType<typeof store.getState>;
+         export type AppDispatch = typeof store.dispatch;
+
+2. Set Provider in which component can access state in main.tsx or App.tsx
+   > provide a store which is store.
 3. Create Slice
-4. setup the component
+   - define a type of state.
+   - declare a initialState   
+   >Create a slice component
+
+4. import the reducer in store.ts
+5. setup the component
+
+6. create a actions in slice variable
+   - export the actions
+
+7. import the actions to the component you will use.
+   -import useSelector to get the value of state
+   -import useDispatch to use the actions
+   -use the action in DOM Elements. eg. in buttons
